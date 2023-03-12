@@ -49,14 +49,15 @@ def predict(request):
     if request.method == "POST":
         raw_tweet = request.POST['raw_tweet']
         first_predict = predict_hate_speech(raw_tweet)
+        # print(f"result : {first_predict}")
         if first_predict == 0:
             return redirect('/non_hate_speech')
         else:
             return redirect('/hate_speech')
     return render(request, 'predict.html')
 
-def hate_speech(request):
-    return redirect(request, 'hate_speech.html')
+def h_speech(request):
+    return render(request, 'hate_speech.html')
 
 def non_hs(request):
     context = {

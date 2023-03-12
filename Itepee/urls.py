@@ -22,5 +22,5 @@ urlpatterns = [
     path('', views.index),
     path('predict', views.predict),
     path('non_hate_speech', views.non_hs),
-    path('hate_speech', views.hate_speech)
+    path('hate_speech', views.h_speech)
 ]
