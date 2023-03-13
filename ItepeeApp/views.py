@@ -108,8 +108,22 @@ def non_hs(request):
     }
     return render(request, 'non_hate_speech.html', context=context)
 
+@csrf_exempt
 def detail(request):
+    result_model = TweetModel.objects.all().order_by('-id').first()
     context = {
-        'Title':'Detail'
+        'Title':'Detail',
+        'id':result_model.id,
+        'tweet':result_model.tweet,
+        'target_hs_individu':result_model.target_hs_individu,
+        'target_hs_group':result_model.target_hs_group,
+        'target_hs_religion':result_model.type_hs_religion,
+        'type_hs_ras':result_model.type_hs_ras,
+        'type_hs_physical':result_model.type_hs_physical,
+        'type_hs_gender':result_model.type_hs_gender,
+        'type_hs_other':result_model.type_hs_other,
+        'level_hs_weak':result_model.level_hs_weak,
+        'level_hs_moderate':result_model.level_hs_moderate,
+        'level_hs_strong':result_model.level_hs_strong,
     }
     return render(request, 'detail.html', context=context)

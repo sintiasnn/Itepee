@@ -9,7 +9,9 @@
 			<div class="col md-8">
 				<form>
 					<div class="mb-3">
-						<textarea class="form-control" id="predict" rows="3"></textarea>
+						<textarea class="form-control" id="predict" rows="3">
+                            {{tweet}}
+                        </textarea>
 					</div>
 				</form>
 			</div>
@@ -19,8 +21,8 @@
 			<h5 class="display-5">Target of Hate Speech</h5>
 		</div>
 		<div class="row justify-content-start px-3">
-			<div class="col-3">60</div>
-			<div class="col-3">70</div>
+			<div class="col-3">{{target_hs_individu}}</div>
+			<div class="col-3">{{target_hs_group}}</div>
 		</div>
 		<div class="row justify-content-start">
 			<div class="col-3">Individu</div>
@@ -32,11 +34,11 @@
 			<h5 class="display-5">Type of Hate Speech</h5>
 		</div>
 		<div class="row justify-content-star px-3">
-			<div class="col-2">60</div>
-			<div class="col-2">70</div>
-			<div class="col-2">80</div>
-			<div class="col-2">40</div>
-			<div class="col-2">33</div>
+			<div class="col-2">{{type_hs_physical}}</div>
+			<div class="col-2">{{type_hs_gender}}</div>
+			<div class="col-2">{{target_hs_religion}}</div>
+			<div class="col-2">{{type_hs_ras}}</div>
+			<div class="col-2">{{type_hs_other}}</div>
 		</div>
 		<div class="row justify-content-start">
 			<div class="col-2">Physical</div>
@@ -51,9 +53,9 @@
 			<h5 class="display-5">Level of Hate Speech</h5>
 		</div>
 		<div class="row justify-content-start">
-			<div class="col-3">60</div>
-			<div class="col-3">70</div>
-			<div class="col-3">80</div>
+			<div class="col-3">{{level_hs_weak}}</div>
+			<div class="col-3">{{level_hs_moderate}}</div>
+			<div class="col-3">{{level_hs_strong}}</div>
 		</div>
 		<div class="row justify-content-start">
 			<div class="col-3">weak</div>
