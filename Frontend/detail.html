@@ -1,83 +1,84 @@
-{% extends "Layout/main.html" %}
-{% block content %}
+{% extends "Layout/main.html" %} {% block content %}
 <section id="result">
-	<div class="container">
-		<div class="row text-start mb-3">
-			<h2 class="display-4">Type your tweet here</h2>
-		</div>
-		<div class="row justify-content-start">
-			<div class="col md-8">
-				<form>
-					<div class="mb-3">
-						<textarea class="form-control" id="predict" rows="3">
+  <div class="container">
+    <div class="row text-start mb-3">
+      <h2 class="display-4">Type your tweet here</h2>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col md-8">
+        <form>
+          <div class="mb-3">
+            <textarea class="form-control" id="predict" rows="3">
                             {{tweet}}
-                        </textarea>
-					</div>
-				</form>
-			</div>
-		</div>
-		<!-- target -->
-		<div class="row text-start px-3">
-			<h5 class="display-5">Target of Hate Speech</h5>
-		</div>
-		<div class="row justify-content-start px-3">
-			<div class="col-3">{{target_hs_individu}}</div>
-			<div class="col-3">{{target_hs_group}}</div>
-		</div>
-		<div class="row justify-content-start">
-			<div class="col-3">Individu</div>
-			<div class="col-3">Group</div>
-		</div>
-		<!-- end target -->
-		<!-- type -->
-		<div class="row text-start px-3">
-			<h5 class="display-5">Type of Hate Speech</h5>
-		</div>
-		<div class="row justify-content-star px-3">
-			<div class="col-2">{{type_hs_physical}}</div>
-			<div class="col-2">{{type_hs_gender}}</div>
-			<div class="col-2">{{target_hs_religion}}</div>
-			<div class="col-2">{{type_hs_ras}}</div>
-			<div class="col-2">{{type_hs_other}}</div>
-		</div>
-		<div class="row justify-content-start">
-			<div class="col-2">Physical</div>
-			<div class="col-2">Gender</div>
-			<div class="col-2">religion</div>
-			<div class="col-2">race</div>
-			<div class="col-2">other</div>
-		</div>
-		<!-- end type -->
-		<!-- levels -->
-		<div class="row text-start mb-3">
-			<h5 class="display-5">Level of Hate Speech</h5>
-		</div>
-		<div class="row justify-content-start">
-			<div class="col-3">{{level_hs_weak}}</div>
-			<div class="col-3">{{level_hs_moderate}}</div>
-			<div class="col-3">{{level_hs_strong}}</div>
-		</div>
-		<div class="row justify-content-start">
-			<div class="col-3">weak</div>
-			<div class="col-3">moderate</div>
-			<div class="col-3">strong</div>
-		</div>
-		<!-- end level -->
-		<!-- back to home -->
-		<div class="row justify-content-start">
-			<div class="col mt-5">
-				<form>
-					<button type="submit" class="btn btn-primary">Predict</button>
-				</form>
-			</div>
-		</div>
-		<!-- end button -->
-	</div>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-		<path
-			fill="#0d6efd"
-			fill-opacity="1"
-			d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-	</svg>
+                        </textarea
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- target -->
+    <div class="row text-start px-3">
+      <h5 class="display-5">Target of Hate Speech</h5>
+    </div>
+    <div class="row justify-content-start px-3">
+      <div class="col-3">{{target_hs_individu}}</div>
+      <div class="col-3">{{target_hs_group}}</div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-3">Individu</div>
+      <div class="col-3">Group</div>
+    </div>
+    <!-- end target -->
+    <!-- type -->
+    <div class="row text-start px-3">
+      <h5 class="display-5">Type of Hate Speech</h5>
+    </div>
+    <div class="row justify-content-star px-3">
+      <div class="col-2">{{type_hs_physical}}</div>
+      <div class="col-2">{{type_hs_gender}}</div>
+      <div class="col-2">{{target_hs_religion}}</div>
+      <div class="col-2">{{type_hs_ras}}</div>
+      <div class="col-2">{{type_hs_other}}</div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-2">Physical</div>
+      <div class="col-2">Gender</div>
+      <div class="col-2">religion</div>
+      <div class="col-2">race</div>
+      <div class="col-2">other</div>
+    </div>
+    <!-- end type -->
+    <!-- levels -->
+    <div class="row text-start mb-3">
+      <h5 class="display-5">Level of Hate Speech</h5>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-3">{{level_hs_weak}}</div>
+      <div class="col-3">{{level_hs_moderate}}</div>
+      <div class="col-3">{{level_hs_strong}}</div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-3">weak</div>
+      <div class="col-3">moderate</div>
+      <div class="col-3">strong</div>
+    </div>
+    <!-- end level -->
+    <!-- back to home -->
+    <div class="row justify-content-start">
+      <div class="col mt-5">
+        <form>
+          <button type="submit" class="btn btn-primary">back to home</button>
+        </form>
+      </div>
+    </div>
+    <!-- end button -->
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#0d6efd"
+      fill-opacity="1"
+      d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+    ></path>
+  </svg>
 </section>
 {% endblock %}

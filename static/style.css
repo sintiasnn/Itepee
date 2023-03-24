@@ -1,0 +1,24 @@
+body {
+  font-family: Inter;
+}
+
+.jumbotron {
+  padding-top: 15rem;
+  background-color: #e8f9fd;
+  /* background-color: red; */
+}
+
+#about {
+  padding-top: 7rem;
+  background-color: #79dae8;
+}
+
+#predict {
+  padding-top: 7rem;
+  background-color: #e8f9fd;
+}
+
+#result {
+  padding-top: 7rem;
+  background-color: #e8f9fd;
+}
