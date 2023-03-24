@@ -2,7 +2,7 @@
 <section id="result">
   <div class="container">
     <div class="row text-start mb-3">
-      <h2 class="display-4">Type your tweet here</h2>
+      <h2 class="display-4">Tweet Anda</h2>
     </div>
     <div class="row justify-content-start">
       <div class="col md-8">
@@ -10,15 +10,25 @@
           <div class="mb-3">
             <textarea class="form-control" id="predict" rows="3">
                             {{tweet}}
-                        </textarea
-            >
+            </textarea>
           </div>
         </form>
       </div>
     </div>
+    <!-- info -->
+    <div class="row">
+      <p>
+        target ujaran kebencian adalah <b>individu/kelompok</b>. Jenis Ujaran Kebencian adalah <b>Agama/Ras/Ras/Fisik/Gender/lainnya</b> . Tingkat
+        Ujaran Kebencian adalah <b>Lemah/sedang/kuat</b>
+      </p>
+    </div>
+    <div class="row"></div>
+    <!-- end info -->
+
+    <div class="row"><h2>Hasil Prediksi Lainnya</h2></div>
     <!-- target -->
     <div class="row text-start px-3">
-      <h5 class="display-5">Target of Hate Speech</h5>
+      <h5 class="display-5">Sasaran ujaran kebencian</h5>
     </div>
     <div class="row justify-content-start px-3">
       <div class="col-3">{{target_hs_individu}}</div>
@@ -26,12 +36,14 @@
     </div>
     <div class="row justify-content-start">
       <div class="col-3">Individu</div>
-      <div class="col-3">Group</div>
+      <div class="col-3">Kelompok</div>
     </div>
+    <div class="row"></div>
+    <div class="row"></div>
     <!-- end target -->
     <!-- type -->
     <div class="row text-start px-3">
-      <h5 class="display-5">Type of Hate Speech</h5>
+      <h5 class="display-5">jenis ujaran kebencian</h5>
     </div>
     <div class="row justify-content-star px-3">
       <div class="col-2">{{type_hs_physical}}</div>
@@ -41,16 +53,18 @@
       <div class="col-2">{{type_hs_other}}</div>
     </div>
     <div class="row justify-content-start">
-      <div class="col-2">Physical</div>
+      <div class="col-2">Fisik</div>
       <div class="col-2">Gender</div>
-      <div class="col-2">religion</div>
-      <div class="col-2">race</div>
-      <div class="col-2">other</div>
+      <div class="col-2">Agama</div>
+      <div class="col-2">Ras</div>
+      <div class="col-2">Lainnya</div>
     </div>
+    <div class="row"></div>
+    <div class="row"></div>
     <!-- end type -->
     <!-- levels -->
     <div class="row text-start mb-3">
-      <h5 class="display-5">Level of Hate Speech</h5>
+      <h5 class="display-5">tingkat ujaran kebencian</h5>
     </div>
     <div class="row justify-content-start">
       <div class="col-3">{{level_hs_weak}}</div>
@@ -58,16 +72,18 @@
       <div class="col-3">{{level_hs_strong}}</div>
     </div>
     <div class="row justify-content-start">
-      <div class="col-3">weak</div>
-      <div class="col-3">moderate</div>
-      <div class="col-3">strong</div>
+      <div class="col-3">Lemah</div>
+      <div class="col-3">Sedang</div>
+      <div class="col-3">Kuat</div>
+      <div class="row"></div>
+      <div class="row"></div>
     </div>
     <!-- end level -->
     <!-- back to home -->
     <div class="row justify-content-start">
       <div class="col mt-5">
         <form>
-          <button type="submit" class="btn btn-primary">back to home</button>
+          <button type="submit" class="btn btn-primary">Kembali ke Beranda</button>
         </form>
       </div>
     </div>
