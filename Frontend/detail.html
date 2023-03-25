@@ -2,81 +2,79 @@
 <section id="result">
   <div class="container">
     <div class="row text-start mb-3">
-      <h2 class="display-4">Tweet Anda</h2>
+      <h2 class="fw-bold fs-1">Tweet Anda</h2>
     </div>
     <div class="row justify-content-start">
-      <div class="col md-8">
-        <form>
-          <div class="mb-3">
-            <textarea class="form-control" id="predict" rows="3">
-                            {{tweet}}
-            </textarea>
-          </div>
-        </form>
+      <div class="form-group">
+        <textarea disabled class="form-control" name="predict" rows="3">{{tweet}}</textarea>
       </div>
     </div>
-    <!-- info -->
-    <div class="row">
+    <div class="row py-3 fs-5">
       <p>
         target ujaran kebencian adalah <b>individu/kelompok</b>. Jenis Ujaran Kebencian adalah <b>Agama/Ras/Ras/Fisik/Gender/lainnya</b> . Tingkat
         Ujaran Kebencian adalah <b>Lemah/sedang/kuat</b>
       </p>
     </div>
-    <div class="row"></div>
-    <!-- end info -->
-
-    <div class="row"><h2>Hasil Prediksi Lainnya</h2></div>
-    <!-- target -->
-    <div class="row text-start px-3">
-      <h5 class="display-5">Sasaran ujaran kebencian</h5>
+    <div class="row justify-content-start">
+      <div class="col mt-3">
+        <form class="text-center">
+          <button type="submit" href="#result-detail" class="btn btn-primary">hasil lainnya</button>
+        </form>
+      </div>
     </div>
-    <div class="row justify-content-start px-3">
+  </div>
+</section>
+<section id="result-detail">
+  <div class="container">
+    <div class="row pt-5">
+      <h2 class="fw-bold fs-1">Hasil Prediksi Lainnya</h2>
+    </div>
+
+    <!-- target -->
+    <div class="row text-start py-3">
+      <h5 class="display-5 fw-bold fs-2">Sasaran ujaran kebencian</h5>
+    </div>
+    <div class="row justify-content-start">
       <div class="col-3">{{target_hs_individu}}</div>
       <div class="col-3">{{target_hs_group}}</div>
     </div>
-    <div class="row justify-content-start">
+    <div class="row justify-content-start pb-5">
       <div class="col-3">Individu</div>
       <div class="col-3">Kelompok</div>
     </div>
-    <div class="row"></div>
-    <div class="row"></div>
     <!-- end target -->
     <!-- type -->
-    <div class="row text-start px-3">
-      <h5 class="display-5">jenis ujaran kebencian</h5>
+    <div class="row text-start py-3">
+      <h5 class="display-5 fw-bold fs-2">jenis ujaran kebencian</h5>
     </div>
-    <div class="row justify-content-star px-3">
+    <div class="row justify-content-star">
       <div class="col-2">{{type_hs_physical}}</div>
       <div class="col-2">{{type_hs_gender}}</div>
       <div class="col-2">{{target_hs_religion}}</div>
       <div class="col-2">{{type_hs_ras}}</div>
       <div class="col-2">{{type_hs_other}}</div>
     </div>
-    <div class="row justify-content-start">
+    <div class="row justify-content-start pb-5">
       <div class="col-2">Fisik</div>
       <div class="col-2">Gender</div>
       <div class="col-2">Agama</div>
       <div class="col-2">Ras</div>
       <div class="col-2">Lainnya</div>
     </div>
-    <div class="row"></div>
-    <div class="row"></div>
     <!-- end type -->
     <!-- levels -->
-    <div class="row text-start mb-3">
-      <h5 class="display-5">tingkat ujaran kebencian</h5>
+    <div class="row text-start py-3">
+      <h5 class="display-5 fw-bold fs-2">tingkat ujaran kebencian</h5>
     </div>
     <div class="row justify-content-start">
       <div class="col-3">{{level_hs_weak}}</div>
       <div class="col-3">{{level_hs_moderate}}</div>
       <div class="col-3">{{level_hs_strong}}</div>
     </div>
-    <div class="row justify-content-start">
+    <div class="row justify-content-start pb-4">
       <div class="col-3">Lemah</div>
       <div class="col-3">Sedang</div>
       <div class="col-3">Kuat</div>
-      <div class="row"></div>
-      <div class="row"></div>
     </div>
     <!-- end level -->
     <!-- back to home -->
@@ -97,4 +95,5 @@
     ></path>
   </svg>
 </section>
+
 {% endblock %}

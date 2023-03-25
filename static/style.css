@@ -18,7 +18,8 @@ body {
   background-color: #e8f9fd;
 }
 
-#result {
+#result,
+#result-detail {
   padding-top: 7rem;
   background-color: #e8f9fd;
 }
