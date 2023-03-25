@@ -108,21 +108,60 @@ def h_speech(request,id):
         'target_hs_individu':result_model.target_hs_individu,
         'target_hs_group':result_model.target_hs_group,
         'type_hs_religion':result_model.type_hs_religion,
-        'type_hs_ras':result_model.type_hs_ras,
+        'type_hs_ras'     :result_model.type_hs_ras,
         'type_hs_physical':result_model.type_hs_physical,
-        'type_hs_gender':result_model.type_hs_gender,
-        'type_hs_other':result_model.type_hs_other,
-        'level_hs_weak':result_model.level_hs_weak,
+        'type_hs_gender'  :result_model.type_hs_gender,
+        'type_hs_other'   :result_model.type_hs_other,
+        'level_hs_weak'    :result_model.level_hs_weak,
         'level_hs_moderate':result_model.level_hs_moderate,
-        'level_hs_strong':result_model.level_hs_strong,
+        'level_hs_strong'  :result_model.level_hs_strong,
     }
-    if target_hs_individu > target_hs_group:
-        target_final = 'individu'
+    
+    if context.get("target_hs_individu") > context.get("target_hs_group"):
+        target_final = 'Individu'
     else:
         target_final = 'Kelompok'
 
-    if 
-    return render(request, 'hate_speech.html')
+    hs_types = [
+        result_model.type_hs_religion,
+        result_model.type_hs_ras,
+        result_model.type_hs_physical,
+        result_model.type_hs_gender,
+        result_model.type_hs_other,
+    ]
+    max_val_hs_type = max(hs_types)
+    hs_type = "Tidak diketahui"
+    if max_val_hs_type == hs_types[0]:
+        hs_type = "Agama"
+    elif max_val_hs_type == hs_types[1]:
+        hs_type = "Ras"
+    elif max_val_hs_type == hs_types[2]:
+        hs_type = "Fisik"
+    elif max_val_hs_type == hs_types[3]:
+        hs_type = "Gender"
+    elif max_val_hs_type == hs_types[4]:
+        hs_type = "Lainnya"
+        
+    hs_levels = [
+        result_model.level_hs_weak,
+        result_model.level_hs_moderate,
+        result_model.level_hs_strong,
+    ]
+    max_val_hs_levels = max(hs_levels)
+    hs_level = "Tidak diketahui"
+    if max_val_hs_levels == hs_levels[0]:
+        hs_level = "Lemah"
+    elif max_val_hs_levels == hs_levels[1]:
+        hs_level = "Sedang"
+    elif max_val_hs_levels == hs_levels[2]:
+        hs_level = "Kuat"
+    
+    return render(request, 'hate_speech.html', context={
+        "tweet": context['tweet']
+        "target" : target_final,
+        "type": hs_type,
+        "level": hs_level
+    })
 
 def non_hs(request):
     context = {
