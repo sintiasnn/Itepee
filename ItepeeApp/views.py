@@ -143,7 +143,7 @@ def detail(request):
         'level_hs_moderate':result_model.level_hs_moderate,
         'level_hs_strong':result_model.level_hs_strong,
     }
-        if context.get("target_hs_individu") > context.get("target_hs_group"):
+    if context.get("target_hs_individu") > context.get("target_hs_group"):
         target_final = 'Individu'
     else:
         target_final = 'Kelompok'
