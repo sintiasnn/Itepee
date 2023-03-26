@@ -23,5 +23,5 @@ urlpatterns = [
     path('predict', views.predict),
     path('non_hate_speech', views.non_hs),
     path('hate_speech/<int:id>', views.h_speech),
-    path('detail_hs', views.detail)
+    path('detail_hs/<int:id>', views.detail)
 ]
