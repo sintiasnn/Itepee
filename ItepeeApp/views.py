@@ -183,7 +183,7 @@ def detail(request):
         hs_level = "Kuat"
     
     return render(request, 'detail.html', context={
-        "tweet": context['tweet']
+        "tweet": context['tweet'],
         "target" : target_final,
         "type": hs_type,
         "level": hs_level
