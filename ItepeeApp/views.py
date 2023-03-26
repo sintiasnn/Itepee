@@ -116,8 +116,10 @@ def h_speech(request,id):
         'level_hs_moderate':result_model.level_hs_moderate,
         'level_hs_strong'  :result_model.level_hs_strong,
     }
+    return redirect(f'/detail_hs/{id:id}')
+    return render(request, 'hate_speech.html', context=context)
     
-
+ 
 
 def non_hs(request):
     context = {
