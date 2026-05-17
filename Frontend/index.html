@@ -2,55 +2,81 @@
 {% load static %}
 
 {% block content %}
-<!-- jumbotron -->
-<section class="jumbotron text-center">
-      <h2 class="display-4 fw-bold fs-1">Prediktor Tweet Ujaran Kebencian Bahasa Indonesia</h2>
-      <p class="lead">Prediksi tweet Anda sebelum Anda men-tweet ini</p>
-      <a class="btn btn-primary btn-lg" href="#about" role="button">Pelajari Selengkapnya</a>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#79DAE8"
-          fill-opacity="1"
-          d="M0,64L40,96C80,128,160,192,240,202.7C320,213,400,171,480,154.7C560,139,640,149,720,181.3C800,213,880,267,960,245.3C1040,224,1120,128,1200,101.3C1280,75,1360,117,1400,138.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- end jumbotron -->
+<section class="hero text-center">
+  <div class="container position-relative">
+    <div class="hero-icon">&#128172;</div>
+    <h1 class="display-4 fw-bold mb-3 section-title">Prediktor Tweet<br>Ujaran Kebencian</h1>
+    <p class="lead text-muted mb-4 mx-auto" style="max-width: 500px;">
+      Cek apakah tweet Anda mengandung ujaran kebencian sebelum Anda men-tweet
+    </p>
+    <div class="d-flex gap-3 justify-content-center">
+      <a class="btn btn-primary btn-lg" href="/predict">Coba Sekarang</a>
+      <a class="btn btn-outline-primary btn-lg" href="#about">Pelajari</a>
+    </div>
+  </div>
+  <svg class="wave-divider mt-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#ffffff" d="M0,50 C320,100 1120,0 1440,50 L1440,100 L0,100 Z"></path>
+  </svg>
+</section>
 
-    <!-- about -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-4">
-          <div class="col"><h2 class="display-4 fw-bold fs-1">Tentang Sistem</h2></div>
+<section id="about">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <h2 class="display-5 fw-bold section-title">Tentang Sistem</h2>
+      <p class="text-muted section-subtitle">Deep Learning untuk deteksi ujaran kebencian bahasa Indonesia</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-3">
+        <div class="card shadow-sm feature-card">
+          <div class="icon" style="background: #eef2ff; color: #4f46e5;">01</div>
+          <h5>Deteksi</h5>
+          <p>Klasifikasi apakah tweet mengandung ujaran kebencian atau tidak</p>
         </div>
-        <div class="row justify-content-evenly">
-          <div class="col-md-5">
-            <p><strong>I-Teepe (Indonesia Tweet Prediction)</strong> adalah sistem deteksi ujaran kebencian pada tweet berbahasa Indonesia. Sistem ini menggunakan 4 model deep learning (TensorFlow/Keras) yang mampu mengklasifikasikan:</p>
-            <ul class="text-start">
-              <li>Apakah sebuah tweet mengandung ujaran kebencian</li>
-              <li>Sasaran ujaran kebencian (Individu/Kelompok)</li>
-              <li>Jenis ujaran kebencian (Agama, Ras, Fisik, Gender, Lainnya)</li>
-              <li>Tingkat ujaran kebencian (Lemah, Sedang, Kuat)</li>
-            </ul>
-          </div>
-          <div class="col-md-5">
-            <p>Sistem ini dibuat sebagai proyek penelitian tugas akhir dan dikembangkan dengan bantuan teman-teman. Teknologi yang digunakan:</p>
-            <ul class="text-start">
-              <li>Django 4 sebagai web framework</li>
-              <li>TensorFlow 2 untuk model deep learning</li>
-              <li>Preprocessing teks dengan normalisasi bahasa alay dan stopword removal</li>
-              <li>Bootstrap 5 untuk tampilan responsif</li>
-            </ul>
-            <a class="btn btn-primary btn-lg mt-3" href="/predict" role="button">Coba Sekarang</a>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm feature-card">
+          <div class="icon" style="background: #fef2f2; color: #dc2626;">02</div>
+          <h5>Sasaran</h5>
+          <p>Menentukan sasaran ujaran: individu atau kelompok</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm feature-card">
+          <div class="icon" style="background: #fffbeb; color: #d97706;">03</div>
+          <h5>Jenis</h5>
+          <p>Mengidentifikasi jenis: Agama, Ras, Fisik, Gender, atau Lainnya</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm feature-card">
+          <div class="icon" style="background: #ecfdf5; color: #059669;">04</div>
+          <h5>Tingkat</h5>
+          <p>Mengukur intensitas: Lemah, Sedang, atau Kuat</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm p-4" style="background: var(--gray-50);">
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h5 class="fw-bold">Teknologi yang Digunakan</h5>
+              <ul class="mb-0 text-muted">
+                <li>Django 4 &mdash; Web framework</li>
+                <li>TensorFlow / Keras &mdash; 4 model deep learning</li>
+                <li>Preprocessing teks dengan normalisasi alay &amp; stopword removal</li>
+                <li>Bootstrap 5 &mdash; Tampilan responsif</li>
+              </ul>
+            </div>
+            <div class="col-md-5 text-md-end mt-3 mt-md-0">
+              <a class="btn btn-primary btn-lg" href="/predict">Coba Sekarang</a>
+            </div>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#0d6efd"
-          fill-opacity="1"
-          d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-    </section>
-    <!-- end about -->
+    </div>
+  </div>
+</section>
 {% endblock %}

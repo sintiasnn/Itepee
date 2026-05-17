@@ -1,94 +1,108 @@
 {% extends "Layout/main.html" %} {% block content %}
-<section id="result">
+<section style="padding: 7rem 0 2rem;">
   <div class="container">
-    <div class="row text-start mb-3">
-      <h2 class="fw-bold fs-1">Tweet Anda</h2>
-    </div>
-    <div class="row justify-content-start">
-      <div class="form-group">
-        <textarea disabled class="form-control" name="predict" rows="3">{{tweet}}</textarea>
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8">
+        <h2 class="fw-bold section-title">Hasil Prediksi</h2>
+        <div class="card shadow-sm mt-3">
+          <div class="card-body">
+            <p class="text-muted small mb-1">Tweet yang diperiksa:</p>
+            <p class="tweet-quote mb-0">{{ tweet }}</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row py-3 fs-5">
-      <p>
-        target ujaran kebencian adalah <b>{{target}}</b>. Jenis Ujaran Kebencian adalah <b>{{type}}</b> . Tingkat Ujaran Kebencian adalah
-        <b>{{level}}</b>
-      </p>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8">
+        <div class="card shadow-sm p-4">
+          <div class="row text-center g-3">
+            <div class="col-md-4">
+              <div class="p-3 rounded" style="background: var(--primary-light);">
+                <p class="text-muted small mb-1">Sasaran</p>
+                <h4 class="fw-bold mb-0" style="color: var(--primary);">{{ target }}</h4>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 rounded" style="background: var(--danger-light);">
+                <p class="text-muted small mb-1">Jenis</p>
+                <h4 class="fw-bold mb-0 text-danger">{{ type }}</h4>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 rounded" style="background: #fffbeb;">
+                <p class="text-muted small mb-1">Tingkat</p>
+                <h4 class="fw-bold mb-0" style="color: var(--warning);">{{ level }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row justify-content-start">
-      <div class="col mt-3 text-start">
-        <a href="#result-detail" class="btn btn-primary">Hasil Detail</a>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm p-4">
+          <h5 class="fw-bold mb-4">Detail Probabilitas</h5>
+
+          <div class="mb-4">
+            <h6 class="fw-bold" style="color: var(--primary);">Sasaran Ujaran Kebencian</h6>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between mb-1">
+                <span>Individu</span>
+                <span class="prob-value" style="color: var(--primary);">{{ target_hs_individu|floatformat:4 }}</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: {% widthratio target_hs_individu 1 100 %}%; background: var(--primary);"></div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between mb-1">
+                <span>Kelompok</span>
+                <span class="prob-value" style="color: var(--primary);">{{ target_hs_group|floatformat:4 }}</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: {% widthratio target_hs_group 1 100 %}%; background: var(--primary);"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold text-danger">Jenis Ujaran Kebencian</h6>
+            {% for label, value in types %}
+            <div class="mb-2">
+              <div class="d-flex justify-content-between mb-1">
+                <span>{{ label }}</span>
+                <span class="prob-value text-danger">{{ value|floatformat:4 }}</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: {% widthratio value 1 100 %}%; background: var(--danger);"></div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div>
+            <h6 class="fw-bold" style="color: var(--warning);">Tingkat Ujaran Kebencian</h6>
+            {% for label, value in levels %}
+            <div class="mb-2">
+              <div class="d-flex justify-content-between mb-1">
+                <span>{{ label }}</span>
+                <span class="prob-value" style="color: var(--warning);">{{ value|floatformat:4 }}</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: {% widthratio value 1 100 %}%; background: var(--warning);"></div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="/predict" class="btn btn-primary btn-lg">Coba Tweet Lain</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section id="result-detail">
-  <div class="container">
-    <div class="row pt-5">
-      <h2 class="fw-bold fs-1">Hasil Prediksi Lainnya</h2>
-    </div>
-
-    <!-- target -->
-    <div class="row text-start py-3">
-      <h5 class="display-5 fw-bold fs-2">Sasaran ujaran kebencian</h5>
-    </div>
-    <div class="row justify-content-start">
-      <div class="col-3">{{target_hs_individu}}</div>
-      <div class="col-3">{{target_hs_group}}</div>
-    </div>
-    <div class="row justify-content-start pb-5">
-      <div class="col-3">Individu</div>
-      <div class="col-3">Kelompok</div>
-    </div>
-    <!-- end target -->
-    <!-- type -->
-    <div class="row text-start py-3">
-      <h5 class="display-5 fw-bold fs-2">jenis ujaran kebencian</h5>
-    </div>
-    <div class="row justify-content-star">
-      <div class="col-2">{{type_hs_physical}}</div>
-      <div class="col-2">{{type_hs_gender}}</div>
-      <div class="col-2">{{type_hs_religion}}</div>
-      <div class="col-2">{{type_hs_ras}}</div>
-      <div class="col-2">{{type_hs_other}}</div>
-    </div>
-    <div class="row justify-content-start pb-5">
-      <div class="col-2">Fisik</div>
-      <div class="col-2">Gender</div>
-      <div class="col-2">Agama</div>
-      <div class="col-2">Ras</div>
-      <div class="col-2">Lainnya</div>
-    </div>
-    <!-- end type -->
-    <!-- levels -->
-    <div class="row text-start py-3">
-      <h5 class="display-5 fw-bold fs-2">tingkat ujaran kebencian</h5>
-    </div>
-    <div class="row justify-content-start">
-      <div class="col-3">{{level_hs_weak}}</div>
-      <div class="col-3">{{level_hs_moderate}}</div>
-      <div class="col-3">{{level_hs_strong}}</div>
-    </div>
-    <div class="row justify-content-start pb-4">
-      <div class="col-3">Lemah</div>
-      <div class="col-3">Sedang</div>
-      <div class="col-3">Kuat</div>
-    </div>
-    <!-- end level -->
-    <div class="row justify-content-start">
-      <div class="col mt-5">
-        <a href="/" class="btn btn-primary">Kembali ke Beranda</a>
-      </div>
-    </div>
-    <!-- end button -->
-  </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path
-      fill="#0d6efd"
-      fill-opacity="1"
-      d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-    ></path>
-  </svg>
-</section>
-
 {% endblock %}

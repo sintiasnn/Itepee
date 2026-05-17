@@ -1,40 +1,39 @@
 {% extends "Layout/main.html" %} {% block content %}
-<section id="predict" style="padding-top: 95px">
+<section style="padding: 8rem 0 4rem;">
   <div class="container">
-    <div class="row text-center mb-3">
-      <h2 class="fw-bold fs-1">Ketik tweet Anda di sini</h2>
-    </div>
     <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form method="POST" id="predictForm">
-          {% csrf_token %}
-          <div class="mb-3">
-            <textarea class="form-control" rows="3" name="raw_tweet" placeholder="Masukkan tweet di sini..." required></textarea>
+      <div class="col-lg-7">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold section-title">Cek Tweet Kamu</h2>
+          <p class="text-muted">Masukkan tweet untuk diperiksa oleh sistem prediksi kami</p>
+        </div>
+        <div class="card shadow-sm p-4">
+          <form method="POST" id="predictForm">
+            {% csrf_token %}
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" name="raw_tweet" placeholder="Tulis tweet di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 btn-lg" id="predictBtn">
+              Prediksi Sekarang
+            </button>
+          </form>
+          <div id="loading" class="text-center mt-4" style="display: none;">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3 text-muted fw-medium">Sedang menganalisis tweet...</p>
           </div>
-          <button type="submit" class="btn btn-primary" id="predictBtn">Prediksi Sekarang</button>
-        </form>
-        <div id="loading" class="text-center mt-3" style="display: none;">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-          <p class="mt-2">Sedang memproses prediksi...</p>
         </div>
       </div>
     </div>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path
-      fill="#0d6efd"
-      fill-opacity="1"
-      d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-    ></path>
-  </svg>
 </section>
 
 <script>
   document.getElementById('predictForm').addEventListener('submit', function() {
-    document.getElementById('predictBtn').disabled = true;
-    document.getElementById('predictBtn').textContent = 'Memproses...';
+    var btn = document.getElementById('predictBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Memproses...';
     document.getElementById('loading').style.display = 'block';
   });
 </script>
