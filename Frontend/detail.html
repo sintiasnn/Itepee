@@ -18,21 +18,21 @@
         <div class="card shadow-sm p-4">
           <div class="row text-center g-3">
             <div class="col-md-4">
-              <div class="p-3 rounded" style="background: var(--primary-light);">
+              <div class="p-3 rounded" style="background: #e8f9fd;">
                 <p class="text-muted small mb-1">Sasaran</p>
-                <h4 class="fw-bold mb-0" style="color: var(--primary);">{{ target }}</h4>
+                <h4 class="fw-bold mb-0" style="color: #0d6efd;">{{ target }}</h4>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="p-3 rounded" style="background: var(--danger-light);">
+              <div class="p-3 rounded" style="background: #f8d7da;">
                 <p class="text-muted small mb-1">Jenis</p>
                 <h4 class="fw-bold mb-0 text-danger">{{ type }}</h4>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="p-3 rounded" style="background: #fffbeb;">
+              <div class="p-3 rounded" style="background: #fff3cd;">
                 <p class="text-muted small mb-1">Tingkat</p>
-                <h4 class="fw-bold mb-0" style="color: var(--warning);">{{ level }}</h4>
+                <h4 class="fw-bold mb-0" style="color: #856404;">{{ level }}</h4>
               </div>
             </div>
           </div>
@@ -46,23 +46,23 @@
           <h5 class="fw-bold mb-4">Detail Probabilitas</h5>
 
           <div class="mb-4">
-            <h6 class="fw-bold" style="color: var(--primary);">Sasaran Ujaran Kebencian</h6>
+            <h6 class="fw-bold" style="color: #0d6efd;">Sasaran Ujaran Kebencian</h6>
             <div class="mb-2">
               <div class="d-flex justify-content-between mb-1">
                 <span>Individu</span>
-                <span class="prob-value" style="color: var(--primary);">{{ target_hs_individu|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #0d6efd;">{{ target_hs_individu|floatformat:4 }}</span>
               </div>
               <div class="progress">
-                <div class="progress-bar" style="width: {% widthratio target_hs_individu 1 100 %}%; background: var(--primary);"></div>
+                <div class="progress-bar bg-primary" style="width: {% widthratio target_hs_individu 1 100 %}%;"></div>
               </div>
             </div>
             <div>
               <div class="d-flex justify-content-between mb-1">
                 <span>Kelompok</span>
-                <span class="prob-value" style="color: var(--primary);">{{ target_hs_group|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #0d6efd;">{{ target_hs_group|floatformat:4 }}</span>
               </div>
               <div class="progress">
-                <div class="progress-bar" style="width: {% widthratio target_hs_group 1 100 %}%; background: var(--primary);"></div>
+                <div class="progress-bar bg-primary" style="width: {% widthratio target_hs_group 1 100 %}%;"></div>
               </div>
             </div>
           </div>
@@ -76,22 +76,22 @@
                 <span class="prob-value text-danger">{{ value|floatformat:4 }}</span>
               </div>
               <div class="progress">
-                <div class="progress-bar" style="width: {% widthratio value 1 100 %}%; background: var(--danger);"></div>
+                <div class="progress-bar bg-danger" style="width: {% widthratio value 1 100 %}%;"></div>
               </div>
             </div>
             {% endfor %}
           </div>
 
           <div>
-            <h6 class="fw-bold" style="color: var(--warning);">Tingkat Ujaran Kebencian</h6>
+            <h6 class="fw-bold" style="color: #856404;">Tingkat Ujaran Kebencian</h6>
             {% for label, value in levels %}
             <div class="mb-2">
               <div class="d-flex justify-content-between mb-1">
                 <span>{{ label }}</span>
-                <span class="prob-value" style="color: var(--warning);">{{ value|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #856404;">{{ value|floatformat:4 }}</span>
               </div>
               <div class="progress">
-                <div class="progress-bar" style="width: {% widthratio value 1 100 %}%; background: var(--warning);"></div>
+                <div class="progress-bar bg-warning" style="width: {% widthratio value 1 100 %}%;"></div>
               </div>
             </div>
             {% endfor %}
