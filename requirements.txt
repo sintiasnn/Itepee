@@ -1,4 +1,4 @@
-Django==4.1.7
+Django==4.2.26
 tensorflow==2.21.0
 tf_keras==2.21.0
 keras==3.14.1
