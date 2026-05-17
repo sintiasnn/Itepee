@@ -39,7 +39,7 @@
               <a class="nav-link active" aria-current="page" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">Tentang</a>
+              <a class="nav-link" href="/">Tentang</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/predict">Prediksi</a>
@@ -48,6 +48,17 @@
         </div>
       </div>
     </nav>
+
+    {% if messages %}
+    <div style="padding-top: 76px;">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show rounded-0 text-center mb-0" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
 
     {% block content %} {% endblock content %}
 

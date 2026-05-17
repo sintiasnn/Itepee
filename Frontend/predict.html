@@ -6,12 +6,19 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form method="POST">
+        <form method="POST" id="predictForm">
+          {% csrf_token %}
           <div class="mb-3">
-            <textarea class="form-control" rows="3" name="raw_tweet"></textarea>
+            <textarea class="form-control" rows="3" name="raw_tweet" placeholder="Masukkan tweet di sini..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Prediksi Sekarang</button>
+          <button type="submit" class="btn btn-primary" id="predictBtn">Prediksi Sekarang</button>
         </form>
+        <div id="loading" class="text-center mt-3" style="display: none;">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">Sedang memproses prediksi...</p>
+        </div>
       </div>
     </div>
   </div>
@@ -23,4 +30,12 @@
     ></path>
   </svg>
 </section>
+
+<script>
+  document.getElementById('predictForm').addEventListener('submit', function() {
+    document.getElementById('predictBtn').disabled = true;
+    document.getElementById('predictBtn').textContent = 'Memproses...';
+    document.getElementById('loading').style.display = 'block';
+  });
+</script>
 {% endblock %}

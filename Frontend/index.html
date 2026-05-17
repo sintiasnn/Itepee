@@ -20,14 +20,28 @@
     <!-- about -->
     <section id="about">
       <div class="container">
-        <div class="row text-center">
+        <div class="row text-center mb-4">
           <div class="col"><h2 class="display-4 fw-bold fs-1">Tentang Sistem</h2></div>
         </div>
         <div class="row justify-content-evenly">
-          <div class="col-4"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, sequi.</p></div>
-          <div class="col-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, facere.</p>
-            <a class="btn btn-primary btn-lg" href="/predict" role="button">Coba Sekarang</a>
+          <div class="col-md-5">
+            <p><strong>I-Teepe (Indonesia Tweet Prediction)</strong> adalah sistem deteksi ujaran kebencian pada tweet berbahasa Indonesia. Sistem ini menggunakan 4 model deep learning (TensorFlow/Keras) yang mampu mengklasifikasikan:</p>
+            <ul class="text-start">
+              <li>Apakah sebuah tweet mengandung ujaran kebencian</li>
+              <li>Sasaran ujaran kebencian (Individu/Kelompok)</li>
+              <li>Jenis ujaran kebencian (Agama, Ras, Fisik, Gender, Lainnya)</li>
+              <li>Tingkat ujaran kebencian (Lemah, Sedang, Kuat)</li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <p>Sistem ini dibuat sebagai proyek penelitian tugas akhir dan dikembangkan dengan bantuan teman-teman. Teknologi yang digunakan:</p>
+            <ul class="text-start">
+              <li>Django 4 sebagai web framework</li>
+              <li>TensorFlow 2 untuk model deep learning</li>
+              <li>Preprocessing teks dengan normalisasi bahasa alay dan stopword removal</li>
+              <li>Bootstrap 5 untuk tampilan responsif</li>
+            </ul>
+            <a class="btn btn-primary btn-lg mt-3" href="/predict" role="button">Coba Sekarang</a>
           </div>
         </div>
       </div>
