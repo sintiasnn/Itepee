@@ -58,7 +58,10 @@ main {
 
 /* Hero Section */
 .hero {
-  padding: 10rem 0 5rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--primary-light);
   position: relative;
 }
@@ -308,7 +311,8 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 0 2rem;
+    min-height: 100vh;
+    padding: 5rem 1.5rem;
   }
 
   .hero h1 {
