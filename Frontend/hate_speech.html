@@ -1,26 +1,52 @@
 {% extends "Layout/main.html" %} {% block content %}
 <section id="result" style="padding-top: 155px">
   <div class="container">
-    <div class="row text-center">
-      <h2>
-        {{ tweet }}
-      </h2>
-      <h2>
-        {{ target }}
-      </h2>
-      <h2>
-        {{ type }}
-      </h2>
-      <h2>
-        {{ level }}
-      </h2>
-      <h2 class="display-4">oh Tidak!!</h2>
-      <p class="lead">Tweet Anda dianggap sebagai ujaran kebencian. ketuk tombol di bawah ini untuk melihat detail lebih
-        lanjut.</p>
+    <div class="row text-center mb-4">
+      <div class="col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <p class="text-muted mb-1">Tweet Anda:</p>
+            <h5 class="card-text fst-italic">"{{ tweet }}"</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center mb-3">
+      <div class="col-md-4 mb-2">
+        <div class="card border-danger shadow-sm h-100">
+          <div class="card-body">
+            <h6 class="text-muted">Sasaran</h6>
+            <h4 class="text-danger fw-bold">{{ target }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="card border-danger shadow-sm h-100">
+          <div class="card-body">
+            <h6 class="text-muted">Jenis</h6>
+            <h4 class="text-danger fw-bold">{{ type }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="card border-danger shadow-sm h-100">
+          <div class="card-body">
+            <h6 class="text-muted">Tingkat</h6>
+            <h4 class="text-danger fw-bold">{{ level }}</h4>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row text-center">
-      <div class="col align-self-center">
+      <h2 class="display-4 text-danger">Oh Tidak!!</h2>
+      <p class="lead">Tweet Anda terdeteksi sebagai ujaran kebencian. Klik tombol di bawah untuk melihat detail lebih lanjut.</p>
+    </div>
+    <div class="row text-center justify-content-center gap-3">
+      <div class="col-auto">
         <a class="btn btn-primary btn-lg" href="/detail_hs" role="button">Selengkapnya</a>
+      </div>
+      <div class="col-auto">
+        <a class="btn btn-outline-primary btn-lg" href="/predict" role="button">Coba Lagi</a>
       </div>
     </div>
   </div>
@@ -30,5 +56,4 @@
     </path>
   </svg>
 </section>
-<!-- end predict -->
 {% endblock %}
