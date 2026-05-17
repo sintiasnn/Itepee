@@ -1,12 +1,12 @@
 {% extends "Layout/main.html" %} {% block content %}
-<section style="padding: 8rem 0 4rem;">
+<section class="page-section">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-7">
         <span class="status-badge safe mb-3">&#10003; Aman</span>
         <h2 class="display-4 fw-bold text-success mt-2">Horee!!</h2>
         <p class="lead text-muted mb-4">Tweet kamu tidak terdeteksi sebagai ujaran kebencian.</p>
-        <div class="d-flex gap-3 justify-content-center">
+        <div class="d-flex gap-3 justify-content-center flex-column flex-sm-row btn-group-stack">
           <a class="btn btn-success btn-lg" href="/predict">Coba Lagi</a>
           <a class="btn btn-outline-primary btn-lg" href="/">Kembali ke Beranda</a>
         </div>
