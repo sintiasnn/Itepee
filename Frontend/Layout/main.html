@@ -1,7 +1,9 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,14 +34,26 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="/">Beranda</a>
+              <a class="nav-link" href="/">{% translate "Beranda" %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/predict">Prediksi</a>
+              <a class="nav-link" href="/predict">{% translate "Prediksi" %}</a>
             </li>
           </ul>
+          <form action="{% url 'set_language' %}" method="post" class="d-flex">
+            {% csrf_token %}
+            <select name="language" class="form-select form-select-sm" onchange="this.form.submit()" style="width: auto;">
+              {% get_available_languages as LANGUAGES %}
+              {% get_current_language as LANGUAGE_CODE %}
+              {% for lang_code, lang_name in LANGUAGES %}
+                <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                  {{ lang_name }}
+                </option>
+              {% endfor %}
+            </select>
+          </form>
         </div>
       </div>
     </nav>
@@ -62,10 +76,11 @@
     <footer class="text-white text-center">
       <div class="container">
         <p class="mb-0">
-          Dibuat dengan 
-          <span style="color: #f43f5e;">&hearts;</span> 
-          oleh <a href="https://github.com/sintiasnn" class="text-white fw-bold text-decoration-none">sinsin</a>
-          &middot; Tugas Akhir 2023
+          {% translate "Dibuat dengan" %}
+          <span style="color: #f43f5e;">&hearts;</span>
+          {% translate "oleh" %}
+          <a href="https://github.com/sintiasnn" class="text-white fw-bold text-decoration-none">sinsin</a>
+          &middot; {% translate "Tugas Akhir" %} 2023
         </p>
       </div>
     </footer>

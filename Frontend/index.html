@@ -1,17 +1,18 @@
 {% extends "Layout/main.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <section class="hero text-center">
   <div class="container position-relative">
     <div class="hero-icon">&#128172;</div>
-    <h1 class="display-4 fw-bold mb-3 section-title">Prediktor Tweet<br>Ujaran Kebencian</h1>
+    <h1 class="display-4 fw-bold mb-3 section-title">{% translate "Prediktor Tweet Ujaran Kebencian" %}</h1>
     <p class="lead text-muted mb-4 mx-auto" style="max-width: 500px;">
-      Cek apakah tweet Anda mengandung ujaran kebencian sebelum Anda men-tweet
+      {% translate "Cek apakah tweet Anda mengandung ujaran kebencian sebelum Anda men-tweet" %}
     </p>
     <div class="d-flex gap-3 justify-content-center flex-column flex-sm-row">
-      <a class="btn btn-primary btn-lg" href="/predict">Coba Sekarang</a>
-      <a class="btn btn-outline-primary btn-lg" href="#about">Pelajari</a>
+      <a class="btn btn-primary btn-lg" href="/predict">{% translate "Coba Sekarang" %}</a>
+      <a class="btn btn-outline-primary btn-lg" href="#about">{% translate "Pelajari" %}</a>
     </div>
   </div>
   <svg class="wave-divider mt-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -22,37 +23,37 @@
 <section id="about">
   <div class="container">
     <div class="row text-center mb-5">
-      <h2 class="display-5 fw-bold section-title">Tentang Sistem</h2>
-      <p class="text-muted section-subtitle">Deep Learning untuk deteksi ujaran kebencian bahasa Indonesia</p>
+      <h2 class="display-5 fw-bold section-title">{% translate "Tentang Sistem" %}</h2>
+      <p class="text-muted section-subtitle">{% translate "Deep Learning untuk deteksi ujaran kebencian bahasa Indonesia" %}</p>
     </div>
 
     <div class="row g-3 g-md-4 mb-5">
       <div class="col-6 col-md-3">
         <div class="card shadow-sm feature-card">
           <div class="icon" style="background: #e8f9fd; color: #0d6efd;">01</div>
-          <h5>Deteksi</h5>
-          <p>Klasifikasi apakah tweet mengandung ujaran kebencian atau tidak</p>
+          <h5>{% translate "Deteksi" %}</h5>
+          <p>{% translate "Klasifikasi apakah tweet mengandung ujaran kebencian atau tidak" %}</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
         <div class="card shadow-sm feature-card">
           <div class="icon" style="background: #f8d7da; color: #dc3545;">02</div>
-          <h5>Sasaran</h5>
-          <p>Menentukan sasaran ujaran: individu atau kelompok</p>
+          <h5>{% translate "Sasaran" %}</h5>
+          <p>{% translate "Menentukan sasaran ujaran: individu atau kelompok" %}</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
         <div class="card shadow-sm feature-card">
           <div class="icon" style="background: #fff3cd; color: #ffc107;">03</div>
-          <h5>Jenis</h5>
-          <p>Mengidentifikasi jenis: Agama, Ras, Fisik, Gender, atau Lainnya</p>
+          <h5>{% translate "Jenis" %}</h5>
+          <p>{% translate "Mengidentifikasi jenis: Agama, Ras, Fisik, Gender, atau Lainnya" %}</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
         <div class="card shadow-sm feature-card">
           <div class="icon" style="background: #d1e7dd; color: #198754;">04</div>
-          <h5>Tingkat</h5>
-          <p>Mengukur intensitas: Lemah, Sedang, atau Kuat</p>
+          <h5>{% translate "Tingkat" %}</h5>
+          <p>{% translate "Mengukur intensitas: Lemah, Sedang, atau Kuat" %}</p>
         </div>
       </div>
     </div>
@@ -62,16 +63,16 @@
         <div class="card shadow-sm p-4" style="background: #e8f9fd;">
           <div class="row align-items-center">
             <div class="col-md-7">
-              <h5 class="fw-bold">Teknologi yang Digunakan</h5>
+              <h5 class="fw-bold">{% translate "Teknologi yang Digunakan" %}</h5>
               <ul class="mb-0 text-muted">
-                <li>Django 4 &mdash; Web framework</li>
-                <li>TensorFlow / Keras &mdash; 4 model deep learning</li>
-                <li>Preprocessing teks dengan normalisasi alay &amp; stopword removal</li>
-                <li>Bootstrap 5 &mdash; Tampilan responsif</li>
+                <li>Django 4 &mdash; {% translate "Web framework" %}</li>
+                <li>TensorFlow / Keras &mdash; {% translate "4 model deep learning" %}</li>
+                <li>{% translate "Preprocessing teks dengan normalisasi alay dan stopword removal" %}</li>
+                <li>Bootstrap 5 &mdash; {% translate "Tampilan responsif" %}</li>
               </ul>
             </div>
             <div class="col-md-5 text-md-end mt-3 mt-md-0">
-              <a class="btn btn-primary btn-lg" href="/predict">Coba Sekarang</a>
+              <a class="btn btn-primary btn-lg" href="/predict">{% translate "Coba Sekarang" %}</a>
             </div>
           </div>
         </div>

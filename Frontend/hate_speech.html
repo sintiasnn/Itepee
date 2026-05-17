@@ -1,18 +1,21 @@
-{% extends "Layout/main.html" %} {% block content %}
+{% extends "Layout/main.html" %}
+{% load i18n %}
+
+{% block content %}
 <section class="page-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center mb-5">
-        <span class="status-badge hate mb-3">&#9888; Terdeteksi Ujaran Kebencian</span>
-        <h2 class="display-5 fw-bold text-danger mt-2">Oh Tidak!!</h2>
-        <p class="text-muted">Tweet terdeteksi sebagai ujaran kebencian. Berikut detail prediksinya:</p>
+        <span class="status-badge hate mb-3">&#9888; {% translate "Terdeteksi Ujaran Kebencian" %}</span>
+        <h2 class="display-5 fw-bold text-danger mt-2">{% translate "Oh Tidak!!" %}</h2>
+        <p class="text-muted">{% translate "Tweet terdeteksi sebagai ujaran kebencian. Berikut detail prediksinya:" %}</p>
       </div>
     </div>
 
     <div class="row justify-content-center mb-4">
       <div class="col-lg-8">
         <div class="card shadow-sm p-4">
-          <p class="text-muted mb-1 small">Tweet Anda:</p>
+          <p class="text-muted mb-1 small">{% translate "Tweet Anda:" %}</p>
           <p class="tweet-quote mb-0">{{ tweet }}</p>
         </div>
       </div>
@@ -22,7 +25,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body text-center py-4">
-            <p class="text-muted small mb-1">Sasaran</p>
+            <p class="text-muted small mb-1">{% translate "Sasaran" %}</p>
             <h4 class="fw-bold text-danger mb-0">{{ target }}</h4>
           </div>
         </div>
@@ -30,7 +33,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body text-center py-4">
-            <p class="text-muted small mb-1">Jenis</p>
+            <p class="text-muted small mb-1">{% translate "Jenis" %}</p>
             <h4 class="fw-bold text-danger mb-0">{{ type }}</h4>
           </div>
         </div>
@@ -38,7 +41,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <div class="card-body text-center py-4">
-            <p class="text-muted small mb-1">Tingkat</p>
+            <p class="text-muted small mb-1">{% translate "Tingkat" %}</p>
             <h4 class="fw-bold text-danger mb-0">{{ level }}</h4>
           </div>
         </div>
@@ -48,8 +51,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <div class="d-flex gap-3 justify-content-center flex-column flex-sm-row btn-group-stack">
-          <a class="btn btn-primary btn-lg" href="/detail_hs">Selengkapnya</a>
-          <a class="btn btn-outline-primary btn-lg" href="/predict">Coba Lagi</a>
+          <a class="btn btn-primary btn-lg" href="/detail_hs">{% translate "Selengkapnya" %}</a>
+          <a class="btn btn-outline-primary btn-lg" href="/predict">{% translate "Coba Lagi" %}</a>
         </div>
       </div>
     </div>

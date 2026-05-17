@@ -1,0 +1,216 @@
+# Itepee translations
+# Copyright (C) 2023 Ni Putu Sintia Wati
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Itepee 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-17 13:55+0800\n"
+"PO-Revision-Date: 2026-05-17 13:55+0800\n"
+"Last-Translator: Ni Putu Sintia Wati <sintiasnn@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: Frontend/Layout/main.html:39
+msgid "Beranda"
+msgstr "Home"
+
+#: Frontend/Layout/main.html:42
+msgid "Prediksi"
+msgstr "Predict"
+
+#: Frontend/Layout/main.html:79
+msgid "Dibuat dengan"
+msgstr "Made with"
+
+#: Frontend/Layout/main.html:81
+msgid "oleh"
+msgstr "by"
+
+#: Frontend/Layout/main.html:83
+msgid "Tugas Akhir"
+msgstr "Thesis"
+
+#: Frontend/detail.html:9
+msgid "Hasil Prediksi"
+msgstr "Prediction Result"
+
+#: Frontend/detail.html:12
+msgid "Tweet yang diperiksa:"
+msgstr "Analyzed tweet:"
+
+#: Frontend/detail.html:25 Frontend/hate_speech.html:28 Frontend/index.html:41
+msgid "Sasaran"
+msgstr "Target"
+
+#: Frontend/detail.html:31 Frontend/hate_speech.html:36 Frontend/index.html:48
+msgid "Jenis"
+msgstr "Type"
+
+#: Frontend/detail.html:37 Frontend/hate_speech.html:44 Frontend/index.html:55
+msgid "Tingkat"
+msgstr "Level"
+
+#: Frontend/detail.html:49
+msgid "Detail Probabilitas"
+msgstr "Probability Details"
+
+#: Frontend/detail.html:52
+msgid "Sasaran Ujaran Kebencian"
+msgstr "Hate Speech Target"
+
+#: Frontend/detail.html:55
+msgid "Individu"
+msgstr "Individual"
+
+#: Frontend/detail.html:64
+msgid "Kelompok"
+msgstr "Group"
+
+#: Frontend/detail.html:74
+msgid "Jenis Ujaran Kebencian"
+msgstr "Hate Speech Type"
+
+#: Frontend/detail.html:89
+msgid "Tingkat Ujaran Kebencian"
+msgstr "Hate Speech Level"
+
+#: Frontend/detail.html:105
+msgid "Coba Tweet Lain"
+msgstr "Try Another Tweet"
+
+#: Frontend/hate_speech.html:9
+msgid "Terdeteksi Ujaran Kebencian"
+msgstr "Hate Speech Detected"
+
+#: Frontend/hate_speech.html:10
+msgid "Oh Tidak!!"
+msgstr "Oh No!!"
+
+#: Frontend/hate_speech.html:11
+msgid "Tweet terdeteksi sebagai ujaran kebencian. Berikut detail prediksinya:"
+msgstr "Your tweet is detected as hate speech. Here are the prediction details:"
+
+#: Frontend/hate_speech.html:18
+msgid "Tweet Anda:"
+msgstr "Your tweet:"
+
+#: Frontend/hate_speech.html:54
+msgid "Selengkapnya"
+msgstr "Details"
+
+#: Frontend/hate_speech.html:55 Frontend/non_hate_speech.html:13
+msgid "Coba Lagi"
+msgstr "Try Again"
+
+#: Frontend/index.html:9
+msgid "Prediktor Tweet Ujaran Kebencian"
+msgstr "Hate Speech Tweet Predictor"
+
+#: Frontend/index.html:11
+msgid ""
+"Cek apakah tweet Anda mengandung ujaran kebencian sebelum Anda men-tweet"
+msgstr "Check if your tweet contains hate speech before you post"
+
+#: Frontend/index.html:14 Frontend/index.html:75
+msgid "Coba Sekarang"
+msgstr "Try Now"
+
+#: Frontend/index.html:15
+msgid "Pelajari"
+msgstr "Learn More"
+
+#: Frontend/index.html:26
+msgid "Tentang Sistem"
+msgstr "About"
+
+#: Frontend/index.html:27
+msgid "Deep Learning untuk deteksi ujaran kebencian bahasa Indonesia"
+msgstr "Deep Learning for Indonesian hate speech detection"
+
+#: Frontend/index.html:34
+msgid "Deteksi"
+msgstr "Detection"
+
+#: Frontend/index.html:35
+msgid "Klasifikasi apakah tweet mengandung ujaran kebencian atau tidak"
+msgstr "Classify whether a tweet contains hate speech or not"
+
+#: Frontend/index.html:42
+msgid "Menentukan sasaran ujaran: individu atau kelompok"
+msgstr "Determine the target: individual or group"
+
+#: Frontend/index.html:49
+msgid "Mengidentifikasi jenis: Agama, Ras, Fisik, Gender, atau Lainnya"
+msgstr "Identify the type: Religion, Race, Physical, Gender, or Other"
+
+#: Frontend/index.html:56
+msgid "Mengukur intensitas: Lemah, Sedang, atau Kuat"
+msgstr "Measure intensity: Weak, Moderate, or Strong"
+
+#: Frontend/index.html:66
+msgid "Teknologi yang Digunakan"
+msgstr "Technologies Used"
+
+#: Frontend/index.html:68
+msgid "Web framework"
+msgstr "Web framework"
+
+#: Frontend/index.html:69
+msgid "4 model deep learning"
+msgstr "4 deep learning models"
+
+#: Frontend/index.html:70
+msgid "Preprocessing teks dengan normalisasi alay dan stopword removal"
+msgstr "Text preprocessing with slang normalization and stopword removal"
+
+#: Frontend/index.html:71
+msgid "Tampilan responsif"
+msgstr "Responsive design"
+
+#: Frontend/non_hate_speech.html:9
+msgid "Aman"
+msgstr "Safe"
+
+#: Frontend/non_hate_speech.html:10
+msgid "Horee!!"
+msgstr "Hurray!!"
+
+#: Frontend/non_hate_speech.html:11
+msgid "Tweet kamu tidak terdeteksi sebagai ujaran kebencian."
+msgstr "Your tweet is not detected as hate speech."
+
+#: Frontend/non_hate_speech.html:14
+msgid "Kembali ke Beranda"
+msgstr "Back to Home"
+
+#: Frontend/predict.html:10
+msgid "Cek Tweet Kamu"
+msgstr "Check Your Tweet"
+
+#: Frontend/predict.html:11
+msgid "Masukkan tweet untuk diperiksa oleh sistem prediksi kami"
+msgstr "Enter your tweet to be analyzed by our prediction system"
+
+#: Frontend/predict.html:17
+msgid "Tulis tweet di sini..."
+msgstr "Write your tweet here..."
+
+#: Frontend/predict.html:20
+msgid "Prediksi Sekarang"
+msgstr "Predict Now"
+
+#: Frontend/predict.html:25
+msgid "Loading..."
+msgstr "Loading..."
+
+#: Frontend/predict.html:27
+msgid "Sedang menganalisis tweet..."
+msgstr "Analyzing your tweet..."
+
+#: Frontend/predict.html:39
+msgid "Memproses..."
+msgstr "Processing..."
