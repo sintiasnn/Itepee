@@ -53,7 +53,7 @@
             <div class="mb-2">
               <div class="d-flex justify-content-between mb-1">
                 <span>{% translate "Individu" %}</span>
-                <span class="prob-value" style="color: #0d6efd;">{{ target_hs_individu|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #0d6efd;">{% widthratio target_hs_individu 1 100 %}%</span>
               </div>
               <div class="progress">
                 <div class="progress-bar bg-primary" style="width: {% widthratio target_hs_individu 1 100 %}%;"></div>
@@ -62,7 +62,7 @@
             <div>
               <div class="d-flex justify-content-between mb-1">
                 <span>{% translate "Kelompok" %}</span>
-                <span class="prob-value" style="color: #0d6efd;">{{ target_hs_group|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #0d6efd;">{% widthratio target_hs_group 1 100 %}%</span>
               </div>
               <div class="progress">
                 <div class="progress-bar bg-primary" style="width: {% widthratio target_hs_group 1 100 %}%;"></div>
@@ -76,7 +76,7 @@
             <div class="mb-2">
               <div class="d-flex justify-content-between mb-1">
                 <span>{{ label }}</span>
-                <span class="prob-value text-danger">{{ value|floatformat:4 }}</span>
+                <span class="prob-value text-danger">{% widthratio value 1 100 %}%</span>
               </div>
               <div class="progress">
                 <div class="progress-bar bg-danger" style="width: {% widthratio value 1 100 %}%;"></div>
@@ -91,7 +91,7 @@
             <div class="mb-2">
               <div class="d-flex justify-content-between mb-1">
                 <span>{{ label }}</span>
-                <span class="prob-value" style="color: #856404;">{{ value|floatformat:4 }}</span>
+                <span class="prob-value" style="color: #856404;">{% widthratio value 1 100 %}%</span>
               </div>
               <div class="progress">
                 <div class="progress-bar bg-warning" style="width: {% widthratio value 1 100 %}%;"></div>
