@@ -1,19 +1,19 @@
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --primary-light: #eef2ff;
-  --success: #059669;
-  --success-light: #ecfdf5;
-  --danger: #dc2626;
-  --danger-light: #fef2f2;
-  --warning: #d97706;
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+  --primary-light: #e8f9fd;
+  --success: #198754;
+  --success-light: #d1e7dd;
+  --danger: #dc3545;
+  --danger-light: #f8d7da;
+  --warning: #ffc107;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
-  --gray-600: #6b7280;
-  --gray-700: #374151;
-  --gray-900: #111827;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-900: #212529;
 }
 
 body {
@@ -49,20 +49,8 @@ body {
 /* Hero Section */
 .hero {
   padding: 10rem 0 5rem;
-  background: linear-gradient(135deg, var(--primary-light) 0%, #e0e7ff 50%, #f0e6ff 100%);
+  background-color: var(--primary-light);
   position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 50%, rgba(79,70,229,0.06) 0%, transparent 50%),
-              radial-gradient(circle at 70% 50%, rgba(124,58,237,0.06) 0%, transparent 50%);
 }
 
 .hero-icon {
@@ -85,7 +73,7 @@ body {
 /* About Section */
 #about {
   padding: 5rem 0;
-  background: white;
+  background-color: #79dae8;
 }
 
 /* Cards */
@@ -177,7 +165,7 @@ body {
 
 .form-control:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(79,70,229,0.1);
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.1);
 }
 
 .btn {
@@ -195,7 +183,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(79,70,229,0.3);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.3);
 }
 
 .btn-outline-primary {
@@ -262,7 +250,7 @@ footer {
 .tweet-quote::before {
   content: '\201C';
   font-size: 2.5rem;
-  color: var(--primary);
+  color: #0d6efd;
   font-weight: 700;
   line-height: 0;
   vertical-align: -0.4em;
@@ -272,7 +260,7 @@ footer {
 .tweet-quote::after {
   content: '\201D';
   font-size: 2.5rem;
-  color: var(--primary);
+  color: #0d6efd;
   font-weight: 700;
   line-height: 0;
   vertical-align: -0.2em;
