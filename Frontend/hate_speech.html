@@ -1,59 +1,58 @@
 {% extends "Layout/main.html" %} {% block content %}
-<section id="result" style="padding-top: 155px">
+<section style="padding: 8rem 0 4rem;">
   <div class="container">
-    <div class="row text-center mb-4">
-      <div class="col">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <p class="text-muted mb-1">Tweet Anda:</p>
-            <h5 class="card-text fst-italic">"{{ tweet }}"</h5>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <span class="status-badge hate mb-3">&#9888; Terdeteksi Ujaran Kebencian</span>
+        <h2 class="display-5 fw-bold text-danger mt-2">Oh Tidak!!</h2>
+        <p class="text-muted">Tweet terdeteksi sebagai ujaran kebencian. Berikut detail prediksinya:</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8">
+        <div class="card shadow-sm p-4">
+          <p class="text-muted mb-1 small">Tweet Anda:</p>
+          <p class="tweet-quote mb-0">{{ tweet }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-3 mb-5">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center py-4">
+            <p class="text-muted small mb-1">Sasaran</p>
+            <h4 class="fw-bold text-danger mb-0">{{ target }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center py-4">
+            <p class="text-muted small mb-1">Jenis</p>
+            <h4 class="fw-bold text-danger mb-0">{{ type }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center py-4">
+            <p class="text-muted small mb-1">Tingkat</p>
+            <h4 class="fw-bold text-danger mb-0">{{ level }}</h4>
           </div>
         </div>
       </div>
     </div>
-    <div class="row text-center mb-3">
-      <div class="col-md-4 mb-2">
-        <div class="card border-danger shadow-sm h-100">
-          <div class="card-body">
-            <h6 class="text-muted">Sasaran</h6>
-            <h4 class="text-danger fw-bold">{{ target }}</h4>
-          </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="d-flex gap-3 justify-content-center">
+          <a class="btn btn-primary btn-lg flex-fill" href="/detail_hs">Selengkapnya</a>
+          <a class="btn btn-outline-primary btn-lg flex-fill" href="/predict">Coba Lagi</a>
         </div>
-      </div>
-      <div class="col-md-4 mb-2">
-        <div class="card border-danger shadow-sm h-100">
-          <div class="card-body">
-            <h6 class="text-muted">Jenis</h6>
-            <h4 class="text-danger fw-bold">{{ type }}</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-2">
-        <div class="card border-danger shadow-sm h-100">
-          <div class="card-body">
-            <h6 class="text-muted">Tingkat</h6>
-            <h4 class="text-danger fw-bold">{{ level }}</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row text-center">
-      <h2 class="display-4 text-danger">Oh Tidak!!</h2>
-      <p class="lead">Tweet Anda terdeteksi sebagai ujaran kebencian. Klik tombol di bawah untuk melihat detail lebih lanjut.</p>
-    </div>
-    <div class="row text-center justify-content-center gap-3">
-      <div class="col-auto">
-        <a class="btn btn-primary btn-lg" href="/detail_hs" role="button">Selengkapnya</a>
-      </div>
-      <div class="col-auto">
-        <a class="btn btn-outline-primary btn-lg" href="/predict" role="button">Coba Lagi</a>
       </div>
     </div>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#0d6efd" fill-opacity="1"
-      d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,218.7C672,235,768,277,864,277.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-    </path>
-  </svg>
 </section>
 {% endblock %}
