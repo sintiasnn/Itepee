@@ -59,6 +59,14 @@ body {
 }
 
 /* Sections */
+.page-section {
+  padding: 7rem 0 4rem;
+}
+
+.page-section-sm {
+  padding: 5rem 0 2rem;
+}
+
 .section-title {
   font-weight: 800;
   letter-spacing: -1px;
@@ -289,10 +297,62 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .hero {
-    padding: 7rem 0 3rem;
+    padding: 6rem 0 2rem;
   }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  .page-section,
+  .page-section-sm {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
   .btn-lg {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-group-stack {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group-stack .btn {
+    width: 100%;
+  }
+
+  .tweet-quote {
+    font-size: 1rem;
+  }
+
+  .tweet-quote::before,
+  .tweet-quote::after {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .display-5 {
+    font-size: 1.75rem !important;
+  }
+
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
 }
