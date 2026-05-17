@@ -13,8 +13,11 @@ sys.modules['keras'] = tf_keras
 from tf_keras.preprocessing.text import Tokenizer
 from tf_keras.preprocessing.sequence import pad_sequences
 
+import time
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.conf import settings
 from .models import TweetModel
 
 from .preprocessor import preprocess
@@ -97,6 +100,20 @@ def predict(request):
         raw_tweet = request.POST.get('raw_tweet', '').strip()
         if not raw_tweet:
             messages.error(request, "Tolong masukkan tweet terlebih dahulu.")
+            return render(request, 'predict.html')
+
+        # Rate limit: max 10 requests per minute per session
+        now = time.time()
+        last_time = request.session.get('last_predict_time', 0)
+        predict_count = request.session.get('predict_count', 0)
+        if now - last_time < 60:
+            request.session['predict_count'] = predict_count + 1
+        else:
+            request.session['predict_count'] = 1
+        request.session['last_predict_time'] = now
+
+        if request.session.get('predict_count', 0) > 10:
+            messages.error(request, "Terlalu banyak permintaan. Silakan coba lagi nanti.")
             return render(request, 'predict.html')
 
         try:
