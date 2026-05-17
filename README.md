@@ -5,7 +5,7 @@
 ![Django](https://img.shields.io/badge/Django-4.1-green?logo=django)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap)
 
-Deteksi ujaran kebencian (*hate speech*) pada tweet berbahasa Indonesia menggunakan 4 model deep learning TensorFlow/Keras.
+Hate speech detection in Indonesian tweets using 4 TensorFlow/Keras deep learning models.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -19,13 +19,13 @@ Deteksi ujaran kebencian (*hate speech*) pada tweet berbahasa Indonesia mengguna
 
 ## Overview
 
-Sistem ini mengklasifikasikan tweet bahasa Indonesia ke dalam 4 aspek ujaran kebencian menggunakan ensemble 4 model deep learning.
+This system classifies Indonesian tweets into 4 aspects of hate speech using an ensemble of 4 deep learning models.
 
-**Pipeline stages:**
-1. **Preprocessing** — Pembersihan teks, normalisasi alay, stopword removal
-2. **Deteksi** — Klasifikasi biner: hate speech atau non-hate speech
-3. **Klasifikasi Multi-label** — Sasaran (Individu/Kelompok), Jenis (Agama/Ras/Fisik/Gender/Lainnya), Tingkat (Lemah/Sedang/Kuat)
-4. **Web Interface** — Django dengan Bootstrap 5
+**Pipeline:**
+1. **Preprocessing** — Text cleaning, slang normalization, stopword removal
+2. **Detection** — Binary classification: hate speech or non-hate speech
+3. **Multi-label Classification** — Target (Individual/Group), Type (Religion/Race/Physical/Gender/Other), Level (Weak/Moderate/Strong)
+4. **Web Interface** — Django with Bootstrap 5
 
 ## Tech Stack
 
@@ -43,25 +43,25 @@ Sistem ini mengklasifikasikan tweet bahasa Indonesia ke dalam 4 aspek ujaran keb
 ```
 Itepee/
 ├── Frontend/
-│   ├── Layout/main.html       # Layout utama (navbar, footer)
-│   ├── index.html             # Beranda
-│   ├── predict.html           # Form input tweet
-│   ├── hate_speech.html       # Hasil: terdeteksi HS
-│   ├── non_hate_speech.html   # Hasil: aman
-│   └── detail.html            # Detail probabilitas + progress bar
+│   ├── Layout/main.html       # Main layout (navbar, footer)
+│   ├── index.html             # Landing page
+│   ├── predict.html           # Tweet input form
+│   ├── hate_speech.html       # Result: HS detected
+│   ├── non_hate_speech.html   # Result: safe
+│   └── detail.html            # Probability detail + progress bar
 ├── Itepee/
-│   ├── settings.py            # Konfigurasi Django
-│   ├── urls.py                # Routing URL
+│   ├── settings.py            # Django configuration
+│   ├── urls.py                # URL routing
 │   ├── asgi.py / wsgi.py
 ├── ItepeeApp/
-│   ├── views.py               # Logic prediksi & rendering
-│   ├── preprocessor.py        # Preprocessing teks (8 tahap)
-│   ├── models.py              # Model database (TweetModel)
-│   ├── admin.py               # Admin Django
-│   ├── model/                 # 4 model .h5 + tokenizer pickle
-│   └── data/                  # Kamus alay, stopword, HTML entities
+│   ├── views.py               # Prediction & rendering logic
+│   ├── preprocessor.py        # Text preprocessing (8 steps)
+│   ├── models.py              # Database model (TweetModel)
+│   ├── admin.py               # Django admin
+│   ├── model/                 # 4 .h5 models + tokenizer pickle
+│   └── data/                  # Slang dictionary, stopwords, HTML entities
 ├── static/
-│   └── style.css              # Styling kustom
+│   └── style.css              # Custom styling
 ├── .env.example
 ├── manage.py
 └── README.md
@@ -69,26 +69,26 @@ Itepee/
 
 ## Dataset
 
-- **Source**: [id-multi-label-hate-speech-and-abusive-language-detection](https://github.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection) oleh Okky Ibrohim & Indra Budi
-- **Labels**:
+- **Source**: [id-multi-label-hate-speech-and-abusive-language-detection](https://github.com/okkyibrohim/id-multi-label-hate-speech-and-abusive-language-detection) by Okky Ibrohim & Indra Budi
+- **License**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+**Labels:**
 
 | # | Label | Description |
 |---|---|---|
-| 1 | HS | Hate speech / ujaran kebencian |
-| 2 | Abusive | Bahasa abusive |
-| 3 | HS_Individual | Sasaran individu |
-| 4 | HS_Group | Sasaran kelompok |
-| 5 | HS_Religion | Agama |
-| 6 | HS_Race | Ras |
-| 7 | HS_Physical | Fisik/disabilitas |
-| 8 | HS_Gender | Gender/orientasi seksual |
-| 9 | HS_Weak | Tingkat lemah |
-| 10 | HS_Moderate | Tingkat sedang |
-| 11 | HS_Strong | Tingkat kuat |
+| 1 | HS | Hate speech |
+| 2 | Abusive | Abusive language |
+| 3 | HS_Individual | Targeted at individual |
+| 4 | HS_Group | Targeted at group |
+| 5 | HS_Religion | Religion |
+| 6 | HS_Race | Race/ethnicity |
+| 7 | HS_Physical | Physical/disability |
+| 8 | HS_Gender | Gender/sexual orientation |
+| 9 | HS_Weak | Weak level |
+| 10 | HS_Moderate | Moderate level |
+| 11 | HS_Strong | Strong level |
 
-Publikasi: [Multi-label Hate Speech and Abusive Language Detection in Indonesian Twitter](https://www.aclweb.org/anthology/W19-3506.pdf) — ALW3 2019
-
-Lisensi dataset: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Paper: [Multi-label Hate Speech and Abusive Language Detection in Indonesian Twitter](https://www.aclweb.org/anthology/W19-3506.pdf) — ALW3 2019
 
 ## Getting Started
 
@@ -107,7 +107,7 @@ cd Itepee
 ```bash
 conda activate satelit
 ```
-Jika environment `satelit` belum ada:
+If `satelit` environment doesn't exist:
 ```bash
 conda create -n satelit python=3.11 -y
 conda activate satelit
@@ -139,14 +139,14 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Buka **http://localhost:8000**
+Open **http://localhost:8000**
 
 ## Author
 
 **Ni Putu Sintia Wati**
 - GitHub: [@sintiasnn](https://github.com/sintiasnn)
 
-Dibantu oleh:
+Contributors:
 - [Kaenova Mahendra](https://github.com/kaenova)
 - [Kelvin Mulyawan](https://github.com/Kelniter)
 - [Adrianus Wicaksono](https://github.com/chuck1z)
