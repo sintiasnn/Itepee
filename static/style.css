@@ -93,8 +93,8 @@ main {
 
 /* About Section */
 #about {
-  padding: 5rem 0;
-  scroll-margin-top: 5rem;
+  padding: 7rem 0 5rem;
+  scroll-margin-top: 7rem;
   background-color: #79dae8;
 }
 
